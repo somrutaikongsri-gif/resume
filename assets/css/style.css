@@ -775,3 +775,97 @@ body{background:#f1f1f1}
 @media (max-width:340px){ .c-row a[href^="mailto"]{font-size:12.5px} }
 @media (min-width:721px){ .contact{grid-template-columns:minmax(0,1.2fr) minmax(300px,1fr)} }
 .cp-actions{grid-template-columns:1fr!important}
+
+/* =========================================================
+   DARK MODE (toggle saves per visitor)
+   ========================================================= */
+.i-sun{display:none}
+:root[data-theme="dark"] .i-sun{display:block}
+:root[data-theme="dark"] .i-moon{display:none}
+.theme-btn{border:0; cursor:pointer; display:grid; place-items:center}
+.theme-btn svg{width:20px; height:20px}
+.rail-theme{width:56px; height:56px; border-radius:50%; background:#fff; color:#222; box-shadow:0 20px 60px rgba(0,0,0,.06)}
+.m-theme{display:none}
+@media (max-width:720px){
+  .rail-theme{display:none}
+  .m-theme{display:grid; width:40px; height:40px; border-radius:50%; background:#f6f6f6; color:#222}
+}
+
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#191919; --card:#232323; --tint:#2b2b2b; --tint-2:#333; --line:#353535;
+  --ink:#f2f2f2; --ink-2:#cfcfcf; --muted:#9a9a9a;
+}
+:root[data-theme="dark"] body{background:#191919; color:#cfcfcf}
+:root[data-theme="dark"] .card-profile,
+:root[data-theme="dark"] .main,
+:root[data-theme="dark"] .rail,
+:root[data-theme="dark"] .rail-top,
+:root[data-theme="dark"] .site-foot,
+:root[data-theme="dark"] .m-head,
+:root[data-theme="dark"] .stat-card,
+:root[data-theme="dark"] .c-side,
+:root[data-theme="dark"] .c-form,
+:root[data-theme="dark"] .tool,
+:root[data-theme="dark"] .steps li,
+:root[data-theme="dark"] .work,
+:root[data-theme="dark"] .dlg{background:#232323; border-color:#353535; box-shadow:0 20px 60px rgba(0,0,0,.35)}
+:root[data-theme="dark"] .rail a,
+:root[data-theme="dark"] .m-lang,
+:root[data-theme="dark"] .m-theme,
+:root[data-theme="dark"] .sc-icon,
+:root[data-theme="dark"] .c-ic,
+:root[data-theme="dark"] .avail,
+:root[data-theme="dark"] .cp-facts li,
+:root[data-theme="dark"] .t-tile,
+:root[data-theme="dark"] .drawer-x,
+:root[data-theme="dark"] .svc li,
+:root[data-theme="dark"] .c-box{background:#2b2b2b; color:#e6e6e6; border-color:#353535}
+:root[data-theme="dark"] .rail a:hover,:root[data-theme="dark"] .rail a.active{color:#ff3d8b}
+:root[data-theme="dark"] .rail a.active{background:#2b2b2b}
+@media (max-width:720px){ :root[data-theme="dark"] .rail a.active{background:#33262c} :root[data-theme="dark"] .railnav{background:#232323} :root[data-theme="dark"] .rail a{background:none} :root[data-theme="dark"] .rail a svg{background:#2b2b2b} }
+
+/* text */
+:root[data-theme="dark"] h1,:root[data-theme="dark"] h2,:root[data-theme="dark"] h3,:root[data-theme="dark"] h4,
+:root[data-theme="dark"] #home .hello,:root[data-theme="dark"] #home .hero-title,:root[data-theme="dark"] .p-name,
+:root[data-theme="dark"] .m-id strong,:root[data-theme="dark"] .logo,:root[data-theme="dark"] .stat-card b,
+:root[data-theme="dark"] .c-row a,:root[data-theme="dark"] .c-row b,:root[data-theme="dark"] .svc-name,
+:root[data-theme="dark"] .w-thumb b,:root[data-theme="dark"] .mq-track,:root[data-theme="dark"] .cp-facts li > b,
+:root[data-theme="dark"] .awards li,:root[data-theme="dark"] .steps b,:root[data-theme="dark"] .tool b{color:#f2f2f2}
+:root[data-theme="dark"] #home .hero-title mark{color:#1a1a1a}
+:root[data-theme="dark"] #home .lead,:root[data-theme="dark"] .sc-label,:root[data-theme="dark"] .c-row small,
+:root[data-theme="dark"] .site-foot,:root[data-theme="dark"] .fine,:root[data-theme="dark"] .xp-date,
+:root[data-theme="dark"] .w-meta,:root[data-theme="dark"] .tool p,:root[data-theme="dark"] .steps p{color:#9a9a9a}
+:root[data-theme="dark"] .about-txt,:root[data-theme="dark"] .xp-desc,:root[data-theme="dark"] .hero-sub,
+:root[data-theme="dark"] .w-thumb > span{color:#cfcfcf}
+:root[data-theme="dark"] .m-burger i{background:#f2f2f2}
+:root[data-theme="dark"] .socials a{border-color:#3a3a3a; color:#e6e6e6}
+
+/* lines, pills, buttons, inputs */
+:root[data-theme="dark"] .stats,:root[data-theme="dark"] .stat,:root[data-theme="dark"] .xp,:root[data-theme="dark"] .xp li,
+:root[data-theme="dark"] .svc-list,:root[data-theme="dark"] .svc,:root[data-theme="dark"] .awards,:root[data-theme="dark"] .awards li,
+:root[data-theme="dark"] .marquee,:root[data-theme="dark"] .c-row,:root[data-theme="dark"] .sc-label,
+:root[data-theme="dark"] .cp-facts,:root[data-theme="dark"] .cp-facts li{border-color:#353535}
+:root[data-theme="dark"] .pills > span,:root[data-theme="dark"] .stack-filter button,:root[data-theme="dark"] .sn,
+:root[data-theme="dark"] .btn-line,:root[data-theme="dark"] .w-go,:root[data-theme="dark"] .svc-plus,:root[data-theme="dark"] .dlg-x{background:#232323; border-color:#3a3a3a; color:#e6e6e6}
+:root[data-theme="dark"] .svc-plus::before,:root[data-theme="dark"] .svc-plus::after{background:#e6e6e6}
+:root[data-theme="dark"] .stack-filter button.on{background:#f2f2f2; color:#191919; border-color:#f2f2f2}
+:root[data-theme="dark"] .btn-dark{background:#f2f2f2; color:#191919}
+:root[data-theme="dark"] .btn-dark:hover{background:#ff3d8b; color:#fff}
+:root[data-theme="dark"] input,:root[data-theme="dark"] select,:root[data-theme="dark"] textarea{background:#2b2b2b; border-color:#3a3a3a; color:#f2f2f2}
+:root[data-theme="dark"] .w-thumb,:root[data-theme="dark"] .t-1,:root[data-theme="dark"] .t-2,:root[data-theme="dark"] .t-3,:root[data-theme="dark"] .t-ai{background:linear-gradient(160deg,#2c2c2c,#242424); border-color:#353535}
+:root[data-theme="dark"] .flow-mini span{background:#2b2b2b; border-color:#3a3a3a; color:#e6e6e6}
+:root[data-theme="dark"] .flow-mini .hl,:root[data-theme="dark"] .flow span.hl{background:#f2f2f2; color:#191919}
+:root[data-theme="dark"] .kpis div,:root[data-theme="dark"] .flow span{background:#2b2b2b}
+:root[data-theme="dark"] .xp li:hover{background:linear-gradient(90deg,#2b2b2b,transparent)}
+:root[data-theme="dark"] .works-dots button{background:#444} :root[data-theme="dark"] .works-dots button.on{background:#f2f2f2}
+:root[data-theme="dark"] .main::before{background:#444}
+/* photo: keep its light studio backdrop so the white-background photo looks intentional */
+:root[data-theme="dark"] .card-profile .photo{background:#e9e9e9}
+:root[data-theme="dark"] .card-profile .photo::after{background:linear-gradient(180deg,transparent,rgba(35,35,35,.95))}
+:root[data-theme="dark"] .cp-top .logo,:root[data-theme="dark"] .cp-top .avail{background:rgba(35,35,35,.75); color:#f2f2f2}
+:root[data-theme="dark"] .m-scrim{background:rgba(0,0,0,.55)}
+:root[data-theme="dark"] .wm{filter:brightness(1.2)}
+:root[data-theme="dark"] .t-tile img[src*="vercel"]{filter:invert(1)}
+:root[data-theme="dark"] .rail-top{color:#f2f2f2}
+:root[data-theme="dark"] .flow-mini span span{background:none; border:0; padding:0; color:inherit}

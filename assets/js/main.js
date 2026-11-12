@@ -19,7 +19,7 @@
   }
   function size() { var d = devicePixelRatio || 1; W = innerWidth; H = innerHeight; cv.width = W * d; cv.height = H * d; ctx.setTransform(d, 0, 0, d, 0, 0); }
   function paint(dt) {
-    ctx.clearRect(0, 0, W, H); ctx.strokeStyle = 'rgba(0,0,0,.09)'; ctx.lineWidth = 1; ctx.beginPath();
+    ctx.clearRect(0, 0, W, H); ctx.strokeStyle = root.dataset.theme === 'dark' ? 'rgba(255,255,255,.07)' : 'rgba(0,0,0,.09)'; ctx.lineWidth = 1; ctx.beginPath();
     lines.forEach(function (l) {
       l.a += l.va * dt; l.b += l.vb * dt;
       var p1 = edgePoint(l.a), p2 = edgePoint(l.b);
@@ -36,6 +36,15 @@
     document.querySelectorAll('.hero .w').forEach(function (w, i) { w.style.animationDelay = (0.08 * i + 0.1) + 's'; });
   }
   staggerHero();
+
+  /* ---------- light / dark ---------- */
+  document.querySelectorAll('.theme-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = next;
+      try { localStorage.setItem('sk2-theme', next); } catch (e) {}
+    });
+  });
 
   /* ---------- typed role on the profile card ---------- */
   var roles = {
